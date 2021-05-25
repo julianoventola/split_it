@@ -8,8 +8,15 @@ class SplashPage extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       body: Container(
+        width: double.maxFinite,
         decoration: BoxDecoration(
           gradient: AppTheme.gradients.background,
+        ),
+        child: Center(
+          child: Image.asset(
+            'assets/images/Logo.png',
+            width: MediaQuery.of(context).size.width * 0.3,
+          ),
         ),
       ),
     );
