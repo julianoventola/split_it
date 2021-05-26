@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-
 import 'package:split_it/theme/app_theme.dart';
 
 class SocialButtonWidget extends StatelessWidget {
@@ -16,7 +15,7 @@ class SocialButtonWidget extends StatelessWidget {
   Widget build(BuildContext context) {
     return Container(
       height: 56,
-      width: 297,
+      width: 311,
       decoration: BoxDecoration(
         borderRadius: BorderRadius.circular(5),
         border: Border.all(
@@ -42,7 +41,7 @@ class SocialButtonWidget extends StatelessWidget {
           ),
           Container(
             height: 56,
-            width: 239,
+            width: 253,
             child: Center(
               child: Text(
                 label,

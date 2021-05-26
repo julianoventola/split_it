@@ -34,8 +34,9 @@ class _LoginPageState extends State<LoginPage> {
           Column(
             children: [
               Container(
-                margin: EdgeInsets.only(left: 40),
+                margin: EdgeInsets.symmetric(horizontal: 40),
                 child: ListTile(
+                  contentPadding: EdgeInsets.symmetric(horizontal: 5),
                   leading: Image.asset(
                     'assets/images/emoji.png',
                     width: 36,
