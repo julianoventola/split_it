@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:split_it/modules/splash/splash_page.dart';
 
+import 'modules/login/login_page.dart';
+
 class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
@@ -10,7 +12,7 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         primarySwatch: Colors.blue,
       ),
-      home: SplashPage(),
+      home: LoginPage(),
     );
   }
 }
