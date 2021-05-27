@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:split_it/modules/splash/splash_page.dart';
 
+import 'modules/error/error_page.dart';
 import 'modules/login/login_page.dart';
 
 class MyApp extends StatelessWidget {
@@ -12,7 +13,12 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         primarySwatch: Colors.blue,
       ),
-      home: LoginPage(),
+      initialRoute: '/splash',
+      routes: {
+        '/splash': (context) => SplashPage(),
+        '/login': (context) => LoginPage(),
+        '/error': (context) => ErrorPage(),
+      },
     );
   }
 }
