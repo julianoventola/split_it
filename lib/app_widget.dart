@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:split_it/modules/splash/splash_page.dart';
 
 import 'modules/error/error_page.dart';
+import 'modules/home/home_page.dart';
 import 'modules/login/login_page.dart';
 
 class MyApp extends StatelessWidget {
@@ -17,6 +18,7 @@ class MyApp extends StatelessWidget {
       routes: {
         '/splash': (context) => SplashPage(),
         '/login': (context) => LoginPage(),
+        '/home': (context) => HomePage(),
         '/error': (context) => ErrorPage(),
       },
     );

@@ -20,6 +20,10 @@ class _LoginPageState extends State<LoginPage> {
   void initState() {
     super.initState();
     controller = LoginController(onUpdate: () {
+      if (controller.state is LoginStateSuccess) {
+        final user = (controller.state as LoginStateSuccess).user;
+        Navigator.pushReplacementNamed(context, '/home', arguments: user);
+      }
       setState(() {});
     });
   }
