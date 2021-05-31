@@ -1,8 +1,10 @@
 import 'package:flutter/material.dart';
+import 'package:split_it/modules/login/login_state.dart';
 
-import 'package:split_it/modules/login/login_controller.dart';
 import 'package:split_it/modules/login/widgets/social_button.dart';
 import 'package:split_it/theme/app_theme.dart';
+
+import 'login_controller.dart';
 
 class LoginPage extends StatefulWidget {
   const LoginPage({Key? key}) : super(key: key);
@@ -12,7 +14,15 @@ class LoginPage extends StatefulWidget {
 }
 
 class _LoginPageState extends State<LoginPage> {
-  final controller = LoginController();
+  late LoginController controller;
+
+  @override
+  void initState() {
+    super.initState();
+    controller = LoginController(onUpdate: () {
+      setState(() {});
+    });
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -53,13 +63,18 @@ class _LoginPageState extends State<LoginPage> {
               SizedBox(
                 height: 32,
               ),
-              SocialButtonWidget(
-                label: 'Entrar com Google',
-                iconPath: 'assets/images/google-icon.png',
-                onTap: () async {
-                  await controller.googleSignIn();
-                },
-              ),
+              // ternary: check login state to return Widget
+              (controller.state is LoginStateLoading)
+                  ? CircularProgressIndicator()
+                  : (controller.state is LoginStateFailure)
+                      ? Text((controller.state as LoginStateFailure).message)
+                      : SocialButtonWidget(
+                          label: 'Entrar com Google',
+                          iconPath: 'assets/images/google-icon.png',
+                          onTap: () async {
+                            await controller.googleSignIn();
+                          },
+                        ),
               SizedBox(
                 height: 12,
               ),
