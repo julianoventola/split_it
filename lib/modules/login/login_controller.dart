@@ -21,7 +21,7 @@ class LoginController {
     try {
       state = LoginStateLoading();
       update();
-      await Future.delayed(Duration(seconds: 2));
+      // await Future.delayed(Duration(seconds: 2));
       // to test failure: throw 'Failure on accessing Google account!';
       final user = await loginService.googleSignIn();
       state = LoginStateSuccess(user: user);
