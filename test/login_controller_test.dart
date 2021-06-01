@@ -62,4 +62,18 @@ void main() {
         'Error was not able to login');
     expect(states.length, 2);
   });
+
+  test('Login Controller listen() - update listen', () async {
+    loginController.state = LoginStateLoading();
+    loginController
+        .listen((state) => expect(state, isInstanceOf<LoginStateLoading>()));
+    loginController.update();
+  });
+
+  test('Login Controller update() - update listen', () async {
+    loginController.state = LoginStateLoading();
+    loginController
+        .listen((state) => expect(state, isInstanceOf<LoginStateLoading>()));
+    loginController.update();
+  });
 }
