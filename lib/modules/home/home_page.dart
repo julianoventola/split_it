@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:split_it/modules/home/widgets/home_app_bar.dart';
-import 'package:split_it/modules/home/widgets/home_info_card.dart';
 import 'package:split_it/modules/login/models/user_model.dart';
 
 class HomePage extends StatelessWidget {
@@ -12,19 +11,9 @@ class HomePage extends StatelessWidget {
         ModalRoute.of(context)!.settings.arguments as UserModel;
     return Scaffold(
       appBar: AppBarWidget(
+        context: context,
         user: user,
         addButtonOnTap: () {},
-      ),
-      body: Row(
-        children: [
-          HomeInfoCard(
-            value: 124,
-          ),
-          SizedBox(width: 15),
-          HomeInfoCard(
-            value: -144.85,
-          ),
-        ],
       ),
     );
   }
