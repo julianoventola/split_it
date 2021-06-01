@@ -6,6 +6,7 @@ abstract class AppColors {
   Color get title;
   Color get button;
   Color get borderButton;
+  Color get homeAddButton;
 }
 
 class AppColorDefault implements AppColors {
@@ -23,4 +24,7 @@ class AppColorDefault implements AppColors {
 
   @override
   Color get borderButton => Color(0xffDCE0E6);
+
+  @override
+  Color get homeAddButton => Color(0xfff5f5f5);
 }
