@@ -7,6 +7,8 @@ abstract class AppTextStyles {
   TextStyle get title;
   TextStyle get button;
   TextStyle get appbarName;
+  TextStyle get infoCardTitle;
+  TextStyle get infoCardValue;
 }
 
 class AppTextStylesDefault implements AppTextStyles {
@@ -29,5 +31,19 @@ class AppTextStylesDefault implements AppTextStyles {
         fontSize: 16,
         fontWeight: FontWeight.w400,
         color: AppTheme.colors.button,
+      );
+
+  @override
+  TextStyle get infoCardTitle => GoogleFonts.inter(
+        fontSize: 14,
+        fontWeight: FontWeight.w400,
+        color: AppTheme.colors.button,
+      );
+
+  @override
+  TextStyle get infoCardValue => GoogleFonts.inter(
+        fontSize: 20,
+        fontWeight: FontWeight.w600,
+        color: AppTheme.colors.backgroundSplash,
       );
 }
