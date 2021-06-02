@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:split_it/modules/home/home_controller.dart';
 import 'package:split_it/modules/home/repositories/home_repository_mock.dart';
 import 'package:split_it/modules/home/widgets/event_tile.dart';
 import 'package:split_it/modules/home/widgets/home_app_bar.dart';
@@ -16,22 +17,17 @@ class HomePage extends StatefulWidget {
 }
 
 class _HomePageState extends State<HomePage> {
-  late HomeRepository homeRepository;
-  final events = <EventModel>[];
-  var infoCardModel = InfoCardModel(send: 0, receive: 0);
+  final controller = HomeController();
 
   @override
   void initState() {
-    homeRepository = HomeRepositoryMock();
     super.initState();
-    getEvents();
-  }
-
-  getEvents() async {
-    final response = await homeRepository.getEvents();
-    events.addAll(response);
-    infoCardModel = await homeRepository.getInfoCardValues();
-    setState(() {});
+    controller.getEvents(() {
+      setState(() {});
+    });
+    controller.getInfoCardValues(() {
+      setState(() {});
+    });
   }
 
   @override
@@ -40,7 +36,7 @@ class _HomePageState extends State<HomePage> {
         ModalRoute.of(context)!.settings.arguments as UserModel;
     return Scaffold(
       appBar: AppBarWidget(
-        infoCardModel: infoCardModel,
+        infoCardModel: controller.infoCardModel,
         context: context,
         user: user,
         addButtonOnTap: () {},
@@ -48,7 +44,7 @@ class _HomePageState extends State<HomePage> {
       body: Container(
         padding: EdgeInsets.fromLTRB(32, 40, 32, 0),
         child: ListView(
-          children: events
+          children: controller.events
               .map((event) => EventTile(
                     model: event,
                   ))
