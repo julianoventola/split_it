@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:split_it/modules/home/models/info_card_model.dart';
 import 'package:split_it/modules/home/widgets/home_add_button.dart';
 
 import 'package:split_it/modules/login/models/user_model.dart';
@@ -10,11 +11,13 @@ class AppBarWidget extends PreferredSize {
   final BuildContext context;
   final UserModel user;
   final VoidCallback addButtonOnTap;
+  final InfoCardModel infoCardModel;
 
   AppBarWidget({
     required this.user,
     required this.addButtonOnTap,
     required this.context,
+    required this.infoCardModel,
   }) : super(
           preferredSize: Size.fromHeight(328),
           child: Stack(
@@ -54,11 +57,11 @@ class AppBarWidget extends PreferredSize {
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: [
                     HomeInfoCard(
-                      value: 124,
+                      value: infoCardModel.receive,
                     ),
                     SizedBox(width: 15),
                     HomeInfoCard(
-                      value: -48,
+                      value: infoCardModel.send,
                     ),
                   ],
                 ),
