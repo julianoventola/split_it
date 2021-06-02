@@ -9,6 +9,11 @@ abstract class AppTextStyles {
   TextStyle get appbarName;
   TextStyle get infoCardTitle;
   TextStyle get infoCardValue;
+
+  TextStyle get eventTileTitle;
+  TextStyle get eventTileSubTitle;
+  TextStyle get eventTileValue;
+  TextStyle get eventTileFriend;
 }
 
 class AppTextStylesDefault implements AppTextStyles {
@@ -33,6 +38,7 @@ class AppTextStylesDefault implements AppTextStyles {
         color: AppTheme.colors.button,
       );
 
+  // Info Card styles
   @override
   TextStyle get infoCardTitle => GoogleFonts.inter(
         fontSize: 14,
@@ -45,5 +51,31 @@ class AppTextStylesDefault implements AppTextStyles {
         fontSize: 20,
         fontWeight: FontWeight.w600,
         color: AppTheme.colors.backgroundSplash,
+      );
+
+  // Event Tile styles
+  @override
+  TextStyle get eventTileTitle => GoogleFonts.inter(
+        fontSize: 16,
+        fontWeight: FontWeight.w600,
+        color: AppTheme.colors.eventTileTitle,
+      );
+  @override
+  TextStyle get eventTileSubTitle => GoogleFonts.inter(
+        fontSize: 12,
+        fontWeight: FontWeight.w400,
+        color: AppTheme.colors.eventTileSubtitle,
+      );
+  @override
+  TextStyle get eventTileValue => GoogleFonts.inter(
+        fontSize: 14,
+        fontWeight: FontWeight.w400,
+        color: AppTheme.colors.eventTileValue,
+      );
+  @override
+  TextStyle get eventTileFriend => GoogleFonts.inter(
+        fontSize: 12,
+        fontWeight: FontWeight.w400,
+        color: AppTheme.colors.eventTileFriend,
       );
 }

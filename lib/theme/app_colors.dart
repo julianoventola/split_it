@@ -11,6 +11,10 @@ abstract class AppColors {
   Color get backgroundIconInfoCardNegative;
   Color get infoCardNegative;
   Color get infoCardPositive;
+  Color get eventTileTitle;
+  Color get eventTileSubtitle;
+  Color get eventTileValue;
+  Color get eventTileFriend;
 }
 
 class AppColorDefault implements AppColors {
@@ -32,6 +36,7 @@ class AppColorDefault implements AppColors {
   @override
   Color get homeAddButton => Color(0xfff5f5f5);
 
+  // Info Card Colors
   @override
   Color get backgroundIconInfoCardPositive => Color(0xffE8F7F2);
 
@@ -43,4 +48,14 @@ class AppColorDefault implements AppColors {
 
   @override
   Color get infoCardNegative => Color(0xffE83F5B);
+
+  // Event Tile colors
+  @override
+  Color get eventTileTitle => Color(0xff455250);
+  @override
+  Color get eventTileSubtitle => Color(0xff666666);
+  @override
+  Color get eventTileValue => Color(0xff666666);
+  @override
+  Color get eventTileFriend => Color(0xffA4B2AE);
 }
