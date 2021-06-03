@@ -1,14 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:split_it/modules/home/home_controller.dart';
 import 'package:split_it/modules/home/home_state.dart';
-import 'package:split_it/modules/home/repositories/home_repository_mock.dart';
 import 'package:split_it/modules/home/widgets/event_tile.dart';
-import 'package:split_it/modules/home/widgets/home_app_bar.dart';
+import 'package:split_it/modules/home/widgets/app_bar/home_app_bar.dart';
 import 'package:split_it/modules/login/models/user_model.dart';
-import 'package:split_it/shared/models/event_model.dart';
-
-import 'models/info_card_model.dart';
-import 'repositories/home_repository.dart';
 
 class HomePage extends StatefulWidget {
   const HomePage({Key? key}) : super(key: key);
@@ -37,7 +32,6 @@ class _HomePageState extends State<HomePage> {
         ModalRoute.of(context)!.settings.arguments as UserModel;
     return Scaffold(
       appBar: AppBarWidget(
-        infoCardModel: controller.infoCardModel,
         context: context,
         user: user,
         addButtonOnTap: () {},
