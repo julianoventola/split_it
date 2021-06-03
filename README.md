@@ -1,16 +1,35 @@
-# split_it
+# Split it [NOT FINISHED] - [![Flutter](https://img.shields.io/badge/Flutter-dart-white?labelColor=blue&style=flat&link=https://flutter.dev/)](https://flutter.dev/)
 
-A new Flutter project.
+<h1 align="center">
+  <img width="427" src= "./splitit_logo.JPG">
+  <p>💵A Flutter App to split the bill between friends💵</p>
+  <img width="427" src= "./splitit.gif">
+</h1>
+
+# Features
+
+- Splash page with logo
+- Login page using Google Sign in;
+- Home page with avatar photo, name, main values to send/receive and historical bills
 
 ## Getting Started
 
-This project is a starting point for a Flutter application.
+- Clone the repository
+- run in cmd:
+  ```cmd
+  flutter pub get
+  flutter run
+  ```
 
-A few resources to get you started if this is your first Flutter project:
+## Dependencieis
 
-- [Lab: Write your first Flutter app](https://flutter.dev/docs/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://flutter.dev/docs/cookbook)
+| Lib            | Link                                                        |
+| -------------- | ----------------------------------------------------------- |
+| Google Fonts   | [google_fonts](https://pub.dev/packages/google_fonts)       |
+| Firebase Core  | [firebase_core](https://pub.dev/packages/firebase_core)     |
+| Google Sign in | [google_sign_in](https://pub.dev/packages?q=google_sign_in) |
+| Mocktail       | [mocktail](https://pub.dev/packages/mocktail)               |
 
-For help getting started with Flutter, view our
-[online documentation](https://flutter.dev/docs), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+## Device
+
+- Tested in Pixel 4 - Android 11
